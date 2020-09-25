@@ -242,7 +242,7 @@ class Net(nn.Module):
         self.conv2 = GCNConv(16, data.num_classes)
 
     def forward(self, data):
-        x, edge_index = data.x, data.edge_index
+        x, edge_index = data.x, dataset.edge_index
 
         x = self.conv1(x, edge_index)
         x = F.relu(x)
